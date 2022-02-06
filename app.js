@@ -18,9 +18,12 @@ console.log(askAge);
 let askKilometers = prompt('E quanti chilometri deve percorrere?');
 console.log(askKilometers);
 
-const progress = 'Sto calcolando il prezzo del suo biglietto, attenda...';
+let kilometersPrice = 0.21;
+
+let progress = 'Sto calcolando il prezzo del suo biglietto, attenda...';
 alert(progress);
 console.log(progress);
 
-const price = 0.21 * askAge;
-alert(price);
+let finalPrice = askAge * kilometersPrice;
+alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
+console.log(finalPrice);
