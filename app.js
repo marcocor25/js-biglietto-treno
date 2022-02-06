@@ -8,7 +8,11 @@
 
 // **************************************************
 
-let welcome = 'Benvenuto nel mio calcolatore di prezzi del biglietto del treno!';
+let welcome = 'Buongiorno!';
+alert(welcome);
+console.log(welcome);
+
+welcome = 'Oggi la guiderò nel calcolo del prezzo del suo biglietto ferroviario.';
 alert(welcome);
 console.log(welcome);
 
@@ -20,10 +24,25 @@ console.log(askKilometers);
 
 let kilometersPrice = 0.21;
 
-let progress = 'Sto calcolando il prezzo del suo biglietto, attenda...';
+let progress = 'Sto calcolando il prezzo del suo biglietto, attendere prego...';
 alert(progress);
 console.log(progress);
 
-let finalPrice = askAge * kilometersPrice;
-alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
-console.log(finalPrice);
+
+if (askAge < 18) {
+    let standardPrice = askKilometers * kilometersPrice;
+    let discountPrice = standardPrice * 20 / 100;
+    let finalPrice = standardPrice - discountPrice;
+    alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
+    console.log(`Il prezzo del suo biglietto è di ${'€' + finalPrice}`);
+} else if (askAge > 65) {
+    let standardPrice = askKilometers * kilometersPrice;
+    let discountPrice = standardPrice * 20 / 100;
+    let finalPrice = standardPrice - discountPrice;
+    alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
+    console.log(`Il prezzo del suo biglietto è di ${'€' + finalPrice}`);
+} else {
+    let standardPrice = askKilometers * kilometersPrice;
+    alert(`Il prezzo del tuo biglietto è di ${'€' + standardPrice}`);
+    console.log(`Il prezzo del suo biglietto è di ${'€' + standardPrice}`);
+}
