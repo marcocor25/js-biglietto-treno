@@ -6,7 +6,7 @@
 
 // DEVO CHIEDERE ALL'UTENTE IL NUMERO DEI KM CHE VUOLE PERCORRERE E L'ETÀ DEL VIAGGIATORE;
 
-// **************************************************
+// ****************************************************************************************************
 
 let welcome = 'Buongiorno!';
 alert(welcome);
@@ -31,33 +31,32 @@ let progress = 'Sto calcolando il prezzo del suo biglietto, attendere prego...';
 alert(progress);
 console.log(progress);
 
-
-if (askAge < 18) {
+if (askBooleaner == "Si") {
+    document.getElementById("price").innerHTML = 'Lei può viaggiare senza alcun titolo di viaggio! 😎';
+    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
+} else if (askBooleaner == "Sì") {
+    document.getElementById("price").innerHTML = 'Lei può viaggiare senza alcun titolo di viaggio! 😎';
+    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
+} else if (askBooleaner == "si") {
+    document.getElementById("price").innerHTML = 'Lei può viaggiare senza alcun titolo di viaggio! 😎';
+    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
+} else if (askBooleaner == "sì") {
+    document.getElementById("price").innerHTML = 'Lei può viaggiare senza alcun titolo di viaggio! 😎';
+    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
+} else if (askAge < 18) {
     let standardPrice = askKilometers * kilometersPrice;
     let discountPrice = standardPrice * 20 / 100;
     let finalPrice = standardPrice - discountPrice;
-    alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
+    document.getElementById("price").innerHTML = `Il prezzo del suo biglietto è di ${'€' + finalPrice.toFixed(2)}. <br /> La informiamo inoltre che le è stata applicata una riduzione del 20% grazie alla tariffa Under 18.`;
     console.log(`Il prezzo del suo biglietto è di ${'€' + finalPrice}`);
 } else if (askAge > 65) {
     let standardPrice = askKilometers * kilometersPrice;
     let discountPrice = standardPrice * 40 / 100;
     let finalPrice = standardPrice - discountPrice;
-    alert(`Il prezzo del tuo biglietto è di ${'€' + finalPrice}`);
+    document.getElementById("price").innerHTML = `Il prezzo del suo biglietto è di ${'€' + finalPrice.toFixed(2)}. <br /> La informiamo inoltre che le è stata applicata una riduzione del 40% grazie alla tariffa Under 65.`;
     console.log(`Il prezzo del suo biglietto è di ${'€' + finalPrice}`);
-} else if (askBooleaner == "Si") {
-    alert('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-} else if (askBooleaner == "Sì") {
-    alert('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-} else if (askBooleaner == "si") {
-    alert('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-} else if (askBooleaner == "sì") {
-    alert('Lei può viaggiare senza alcun titolo di viaggio! 😎');
-    console.log('Lei può viaggiare senza alcun titolo di viaggio! 😎');
 } else {
     let standardPrice = askKilometers * kilometersPrice;
-    alert(`Il prezzo del tuo biglietto è di ${'€' + standardPrice}`);
+    document.getElementById("price").innerHTML = `Il prezzo del suo biglietto è di ${'€' + standardPrice.toFixed(2)}`;
     console.log(`Il prezzo del suo biglietto è di ${'€' + standardPrice}`);
 }
